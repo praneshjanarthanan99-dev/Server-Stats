@@ -6,6 +6,15 @@ echo "=====SERVER-STATS====="
 echo ""
 echo "===MEMORY USAGE==="
 free -h
+total_mem=$(free | awk '/Mem:/ {print $2}')
+used_mem=$((total_mem - available_mem))
+available_mem=$(free | awk '/Mem:/ {print $7}')
+
+used_percent=$((used_mem * 100 / total_mem))
+available_percent=$((available_mem * 100 / total_mem))
+
+echo "Used Memory: ${used_percent}%"
+echo "Available Memory: ${available_percent}%"
 
 echo ""
 echo "===DISK USAGE==="
