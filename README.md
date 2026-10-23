@@ -16,3 +16,6 @@ https://roadmap.sh/projects/server-stats
 * OS version
 * System uptime
 * Load average
+
+## Git Workflow Practice
+Practicing Git branches, commits, and pull requests.
